@@ -41,7 +41,6 @@
     "eslint-plugin-react": "5.1.1",
     "eslint-plugin-react-native": "1.0.2",
     "mocha": "2.5.3",
-    "react": "^15.4.0",
     "react-native": "^0.38.0"
   },
   "dependencies": {
@@ -56,6 +55,7 @@
     "react-addons-update": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-timer-mixin": "^0.13.3",
+    "react": "^15.4.0",    
     "warning": "^2.1.0"
   },
   "peerDependencies": {
