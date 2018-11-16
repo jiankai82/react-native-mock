@@ -12,6 +12,10 @@ let networkInfo = {
   connected: true
 };
 
+let connectionInfo = {
+  type: 'wifi',
+  effectiveType: 'unknown'
+};
 
 const NetInfo = {
   addEventListener(eventname, handler) {
@@ -66,6 +70,10 @@ const NetInfo = {
   __setIsConnected(connected) {
     networkInfo = Object.assign({}, networkInfo, { connected });
   },
+
+  getConnectionInfo() {
+    return Promise.resolve(connectionInfo);
+  }
 };
 
 module.exports = NetInfo;
