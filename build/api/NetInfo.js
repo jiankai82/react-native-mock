@@ -9,7 +9,8 @@ var _subscriptions=new Map();
 
 var isExpensive=false;
 var networkInfo={
-connected:true};
+connected: true};
+var connectionInfo={type:'wifi',effectiveType:'unknown'};
 
 
 
@@ -54,7 +55,12 @@ callback(isExpensive);
 }else{
 callback(null,'Unsupported');
 }
-}return isConnectionExpensive;}(),
+} return isConnectionExpensive;
+}(),
+
+getConnectionInfo: function(){function getConnectionInfo(){
+return Promise.resolve(connectionInfo);
+}return getConnectionInfo;}(),
 
 // TODO(lmr): figure out a good way to expose setters here.
 __setNetworkInfo:function(){function __setNetworkInfo(info){
@@ -65,7 +71,10 @@ isExpensive=expensive;
 }return __setIsConnectionExpensive;}(),
 __setIsConnected:function(){function __setIsConnected(connected){
 networkInfo=_extends({},networkInfo,{connected:connected});
-}return __setIsConnected;}()};
+}return __setIsConnected;}(),
+__setConnectionInfo: function () {function __setConnectionInfo(properties){
+connectionInfo = _extends({},connectionInfo,{type:properties.type,effectiveType:effectiveType});
+} return __setConnectionInfo;}()};
 
 
 module.exports=NetInfo;

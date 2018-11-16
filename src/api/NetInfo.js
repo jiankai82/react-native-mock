@@ -70,6 +70,9 @@ const NetInfo = {
   __setIsConnected(connected) {
     networkInfo = Object.assign({}, networkInfo, { connected });
   },
+  __setConnectionInfo(properties) {
+    connectionInfo = Object.assign({}, connectionInfo, properties);
+  },
 
   getConnectionInfo() {
     return Promise.resolve(connectionInfo);
